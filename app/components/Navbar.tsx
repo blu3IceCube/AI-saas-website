@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center fixed inset-x-0">
       <div
         className="flex items-center w-4/5 my-3 py-3 px-6 rounded-3xl bg-neutral-50/[0.4]"
         style={{

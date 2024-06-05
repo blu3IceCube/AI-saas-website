@@ -23,7 +23,12 @@ const Hero = () => {
         </button>
       </div>
       <div className="my-24 w-full">
-        <div className="flex items-center justify-center border rounded h-[48rem]">
+        <div
+          className="flex items-center justify-center border rounded h-[48rem]"
+          style={{
+            boxShadow: "0 0 8px 2px rgb(29, 124, 242 / 0.2)",
+          }}
+        >
           <span className="text-4xl opacity-70">Placeholder box</span>
         </div>
       </div>
