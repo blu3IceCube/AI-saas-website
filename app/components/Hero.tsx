@@ -22,9 +22,9 @@ const Hero = () => {
           Get started
         </button>
       </div>
-      <div className="mt-24">
-        <div className="flex items-center justify-center border rounded h-96">
-          <span>Placeholder box</span>
+      <div className="my-24 w-full">
+        <div className="flex items-center justify-center border rounded h-[48rem]">
+          <span className="text-4xl opacity-70">Placeholder box</span>
         </div>
       </div>
     </>
