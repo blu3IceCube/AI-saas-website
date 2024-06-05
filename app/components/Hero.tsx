@@ -2,8 +2,8 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-center w-3/5">
-      <div className="flex flex-col gap-4 items-center">
+    <>
+      <div className="flex flex-col gap-4 items-center w-3/5">
         <h1 className="text-7xl font-medium">
           Our latest <span className="text-[#1d7cf2]">products</span>
         </h1>
@@ -27,7 +27,7 @@ const Hero = () => {
           <span>Placeholder box</span>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
