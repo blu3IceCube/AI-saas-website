@@ -24,7 +24,7 @@ const Hero = () => {
       </div>
       <div className="my-24 w-full">
         <div
-          className="flex items-center justify-center border rounded h-[48rem]"
+          className="flex items-center justify-center border rounded h-[48rem] text-white bg-neutral-950"
           style={{
             boxShadow: "0 0 8px 2px rgb(29 124 242 / 0.2)",
           }}
