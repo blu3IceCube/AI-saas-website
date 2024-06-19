@@ -13,7 +13,7 @@ const Features = () => {
   }, []);
 
   return (
-    <div className="flex items-stretch justify-center gap-12 w-full mb-14 mt-24">
+    <div className="flex items-stretch justify-center gap-12 w-full mb-24 mt-24">
       <div className="flex-1">
         <h1 className="text-4xl">Product features</h1>
         <p className="opacity-70">
@@ -24,7 +24,7 @@ const Features = () => {
         <div className="flex flex-col gap-4 mt-12">
           {data.map((items, index) => (
             <div
-              className={`p-4 border rounded-lg ${
+              className={`p-4 border rounded-lg cursor-pointer ${
                 selectedIndex === index ? "bg-blue-400/20" : ""
               }`}
               onClick={() => {
@@ -34,7 +34,7 @@ const Features = () => {
             >
               <h1 className="font-medium">{items.title}</h1>
               <p className="opacity-60">{items.discription}</p>
-              <span className="cursor-pointer text-blue-600">Learn more</span>
+              <span className="text-blue-600">Learn more</span>
             </div>
           ))}
         </div>
