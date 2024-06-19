@@ -5,9 +5,11 @@ import React, { useState, useRef, useEffect } from "react";
 const Features = () => {
   const initialContentRef = useRef(data[0].content);
   const [selectedContent, setSelectedContent] = useState<React.ReactNode>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
 
   useEffect(() => {
     setSelectedContent(initialContentRef.current);
+    setSelectedIndex(0);
   }, []);
 
   return (
@@ -22,18 +24,21 @@ const Features = () => {
         <div className="flex flex-col gap-4">
           {data.map((items, index) => (
             <div
-              className="p-4"
-              onClick={() => setSelectedContent(items.content)}
+              className={`p-4 ${selectedIndex === index ? "bg-blue-400" : ""}`}
+              onClick={() => {
+                setSelectedContent(items.content);
+                setSelectedIndex(index);
+              }}
             >
               <h1>{items.title}</h1>
               <p>{items.discription}</p>
-              <Link href="/">Learn more</Link>
+              <span className="cursor-pointer">Learn more</span>
             </div>
           ))}
         </div>
       </div>
       <div className="flex items-center justify-center border rounded-lg flex-1 h-screen">
-        {selectedContent || <span>placeholder</span>}
+        {selectedContent}
       </div>
     </div>
   );
@@ -48,7 +53,7 @@ const data = [
       "This item could provide a snapshot of the most important metrics or data points related to the product.",
     content: (
       <div
-        className="flex items-center justify-center border rounded text-white bg-neutral-950"
+        className="flex items-center justify-center border rounded text-white bg-neutral-950 w-3/5 h-3/5"
         style={{ boxShadow: "0 0 8px 2px rgb(29 124 242 / 0.2)" }}
       >
         <span className="text-xl opacity-70">Dashboard box</span>
@@ -61,7 +66,7 @@ const data = [
       "This item could provide information about the mobile app version of the product.",
     content: (
       <div
-        className="flex items-center justify-center border rounded text-white bg-neutral-950"
+        className="flex items-center justify-center border rounded text-white bg-neutral-950 w-3/5 h-3/5"
         style={{ boxShadow: "0 0 8px 2px rgb(29 124 242 / 0.2)" }}
       >
         <span className="text-xl opacity-70">Mobile integration box</span>
@@ -74,7 +79,7 @@ const data = [
       "This item could let users know the product is available on all platforms, such as web, mobile, and desktop.",
     content: (
       <div
-        className="flex items-center justify-center border rounded text-white bg-neutral-950"
+        className="flex items-center justify-center border rounded text-white bg-neutral-950 w-3/5 h-3/5"
         style={{ boxShadow: "0 0 8px 2px rgb(29 124 242 / 0.2)" }}
       >
         <span className="text-xl opacity-70">Platforms box</span>
