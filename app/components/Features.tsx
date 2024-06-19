@@ -25,7 +25,7 @@ const Features = () => {
           {data.map((items, index) => (
             <div
               className={`p-4 border rounded-lg ${
-                selectedIndex === index ? "bg-blue-400 opacity-20" : ""
+                selectedIndex === index ? "bg-blue-400/20" : ""
               }`}
               onClick={() => {
                 setSelectedContent(items.content);
