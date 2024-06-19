@@ -1,10 +1,13 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import TabsComponent from "./TabsComponent";
 
 const Features = () => {
+  const [selectedContent, setSelectedContent] = useState<React.ReactNode>(null);
+
   return (
-    <div className="flex items-center justify-center gap-12 w-full mb-14">
+    <div className="flex items-stretch justify-center gap-12 w-full mb-14">
       <div className="flex-1">
         <h1 className="text-4xl">Product features</h1>
         <p className="opacity-70">
@@ -12,10 +15,21 @@ const Features = () => {
           product. For example, we could list the number of features, the types
           of features, add-ons, or the benefits of the features.
         </p>
-        <TabsComponent data={data} />
+        <div className="flex flex-col gap-4">
+          {data.map((items, index) => (
+            <div
+              className="p-4"
+              onClick={() => setSelectedContent(items.content)}
+            >
+              <h1>{items.title}</h1>
+              <p>{items.discription}</p>
+              <Link href="/">Learn more</Link>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="flex items-center justify-center border rounded-lg flex-1 h-screen">
-        <span>placeholder</span>
+        {selectedContent || <span>placeholder</span>}
       </div>
     </div>
   );
