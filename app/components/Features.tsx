@@ -13,7 +13,7 @@ const Features = () => {
   }, []);
 
   return (
-    <div className="flex items-stretch justify-center gap-12 w-full mb-14">
+    <div className="flex items-stretch justify-center gap-12 w-full mb-14 mt-24">
       <div className="flex-1">
         <h1 className="text-4xl">Product features</h1>
         <p className="opacity-70">
@@ -21,23 +21,25 @@ const Features = () => {
           product. For example, we could list the number of features, the types
           of features, add-ons, or the benefits of the features.
         </p>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 mt-12">
           {data.map((items, index) => (
             <div
-              className={`p-4 ${selectedIndex === index ? "bg-blue-400" : ""}`}
+              className={`p-4 border rounded-lg ${
+                selectedIndex === index ? "bg-blue-400 opacity-20" : ""
+              }`}
               onClick={() => {
                 setSelectedContent(items.content);
                 setSelectedIndex(index);
               }}
             >
-              <h1>{items.title}</h1>
-              <p>{items.discription}</p>
-              <span className="cursor-pointer">Learn more</span>
+              <h1 className="font-medium">{items.title}</h1>
+              <p className="opacity-60">{items.discription}</p>
+              <span className="cursor-pointer text-blue-600">Learn more</span>
             </div>
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-center border rounded-lg flex-1 h-screen">
+      <div className="flex items-center justify-center border rounded-lg flex-1">
         {selectedContent}
       </div>
     </div>
