@@ -1,10 +1,14 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
-import TabsComponent from "./TabsComponent";
+import React, { useState, useRef, useEffect } from "react";
 
 const Features = () => {
+  const initialContentRef = useRef(data[0].content);
   const [selectedContent, setSelectedContent] = useState<React.ReactNode>(null);
+
+  useEffect(() => {
+    setSelectedContent(initialContentRef.current);
+  }, []);
 
   return (
     <div className="flex items-stretch justify-center gap-12 w-full mb-14">
@@ -44,10 +48,10 @@ const data = [
       "This item could provide a snapshot of the most important metrics or data points related to the product.",
     content: (
       <div
-        className="flex items-center justify-center border rounded h-[48rem] text-white bg-neutral-950"
+        className="flex items-center justify-center border rounded text-white bg-neutral-950"
         style={{ boxShadow: "0 0 8px 2px rgb(29 124 242 / 0.2)" }}
       >
-        <span className="text-4xl opacity-70">Dashboard box</span>
+        <span className="text-xl opacity-70">Dashboard box</span>
       </div>
     ),
   },
@@ -57,10 +61,10 @@ const data = [
       "This item could provide information about the mobile app version of the product.",
     content: (
       <div
-        className="flex items-center justify-center border rounded h-[48rem] text-white bg-neutral-950"
+        className="flex items-center justify-center border rounded text-white bg-neutral-950"
         style={{ boxShadow: "0 0 8px 2px rgb(29 124 242 / 0.2)" }}
       >
-        <span className="text-4xl opacity-70">Mobile integration box</span>
+        <span className="text-xl opacity-70">Mobile integration box</span>
       </div>
     ),
   },
@@ -70,10 +74,10 @@ const data = [
       "This item could let users know the product is available on all platforms, such as web, mobile, and desktop.",
     content: (
       <div
-        className="flex items-center justify-center border rounded h-[48rem] text-white bg-neutral-950"
+        className="flex items-center justify-center border rounded text-white bg-neutral-950"
         style={{ boxShadow: "0 0 8px 2px rgb(29 124 242 / 0.2)" }}
       >
-        <span className="text-4xl opacity-70">Platforms box</span>
+        <span className="text-xl opacity-70">Platforms box</span>
       </div>
     ),
   },
